@@ -27,3 +27,14 @@ export type NotesResponse = {
   recentNotes?: Note[];
   total?: number;
 };
+
+export type FoldersResponse = {
+  folders?: Folder[];
+  data?: Folder[];
+};
+
+export type RouteState = {
+  folderId: string | null;
+  view: SpecialView;
+  noteId: string | null;
+};

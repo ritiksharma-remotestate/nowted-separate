@@ -61,7 +61,7 @@ function NotesList({
         theme === "dark" ? "dark" : ""
       }`}
     >
-      <h1 className="m-0 py-[5%] pr-[5%] pl-[3%] text-left text-[22px] font-bold text-inherit">
+      <h1 className="m-0 py-[5%] pr-[5%] pl-[3%] text-left text-[22px]  text-inherit">
         {specialView === "favorites"
           ? "Favorites"
           : specialView === "trash"
@@ -76,7 +76,7 @@ function NotesList({
       <div ref={listRef} className="doc-list h-[90vh] overflow-y-auto">
         {visibleNotes.map((note) => (
           <div
-            className={`mx-auto mb-2.5 w-[90%] cursor-pointer px-2.5 py-3 text-left text-inherit ${
+            className={`mx-auto mb-2.5 flex h-[98px] w-[310px] max-w-[95%] cursor-pointer flex-col gap-2.5 rounded-[3px] p-5 text-left text-inherit ${
               selectedNoteId === note.id
                 ? "bg-black/10 dark:bg-white/10"
                 : "bg-black/[0.04] hover:bg-black/[0.08] dark:bg-white/[0.03] dark:hover:bg-white/10"
@@ -84,15 +84,19 @@ function NotesList({
             key={note.id}
             onClick={() => handleSelectNote(note)}
           >
-            <h3 className="truncate text-lg font-bold">{note.title}</h3>
+            <h3 className="truncate text-lg leading-6 ">
+              {note.title}
+            </h3>
 
-            <span className="inline-block align-middle text-base text-black/50 dark:text-white/40">
-              {new Date(note.createdAt).toLocaleDateString("en-GB")}
-            </span>
+            <div className="flex items-center gap-2 leading-6">
+              <span className="shrink-0 text-base text-black/50 dark:text-white/40">
+                {new Date(note.createdAt).toLocaleDateString("en-GB")}
+              </span>
 
-            <span className="inline-block w-3/5 truncate pl-[5px] align-middle text-base text-black/60 dark:text-white/60">
-              {note.preview}
-            </span>
+              <span className="min-w-0 flex-1 truncate text-base text-black/60 dark:text-white/60">
+                {note.preview}
+              </span>
+            </div>
           </div>
         ))}
 

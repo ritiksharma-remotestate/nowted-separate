@@ -39,7 +39,7 @@ const navIdleBlue =
 const navIdleGrey =
   "text-black/65 hover:bg-black/[0.08] hover:text-[#181818] dark:text-white/60 dark:hover:bg-white/10 dark:hover:text-white";
 
-const navSelectedBlue = "bg-[#312eb5] font-bold text-white";
+const navSelectedBlue = "bg-[#312eb5]  text-white";
 
 const navSelectedGrey =
   "bg-black/10 font-bold text-[#181818] dark:bg-white/10 dark:text-white";
